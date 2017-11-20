@@ -1,0 +1,14 @@
+  	<ol class="breadcrumb">
+  		<li><a href="{:U('index/index')}">首页</a></li>
+
+  		<php>
+  		if(defined('TC_BDB')){
+			echo '<li><a class="active">'.TC_BDB.'</a></li>';
+  		}else{
+  		</php>
+  		<volist name="list" id="vo">
+  			<li><a href="javascript:void(0);">{$vo['title']}</a></li>		
+  		</volist>	
+  		<li class="active">{$self['title']}</li>
+  		<php>}</php>
+  	</ol>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	{include file="public/title" /}
+	<!-- page specific plugin styles -->
+	{include file="public/meta" /}
+	{block name="header"}{/block}
+</head>
+
+<body>
+	<div id="container" class="effect mainnav-sm navbar-fixed mainnav-fixed footer-fixed tcview-bright aside-fixed <block name='custom-class'></block>">
+		
+		{include file="public/header" /}
+
+		<div class="boxed">
+
+			<!--CONTENT CONTAINER-->
+			<!--===================================================-->
+			<div id="content-container">
+				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<!--End page title-->
+
+				<!--Breadcrumb-->
+				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+				<!--End breadcrumb-->
+
+				<!--Page content-->
+				<!--===================================================-->
+				<div id="page-content">
+					{block name="content"}{/block}
+				</div>
+				<!--===================================================-->
+				<!--End page content-->
+
+
+			</div>
+			{block name="aside"}{/block}
+			<!--===================================================-->
+			<!--END CONTENT CONTAINER-->
+
+			{include file="public/aside" /}
+
+		</div>
+
+		{include file="public/footer" /}
+
+		{block name="footer"}99{/block}
+
+</body>
+</html>

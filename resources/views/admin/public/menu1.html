@@ -1,0 +1,128 @@
+<!--MAIN NAVIGATION-->
+<!--===================================================-->
+<nav id="mainnav-container">
+	<div id="mainnav">
+
+		<!--Shortcut buttons-->
+		<!--================================-->
+		<div id="mainnav-shortcut">
+			<ul class="list-unstyled">
+				<li class="col-xs-4" data-content="Additional Sidebar">
+					<a id="demo-toggle-aside" class="shortcut-grid" href="#">
+						<i class="fa fa-magic"></i>
+					</a>
+				</li>
+				<li class="col-xs-4" data-content="Notification">
+					<a id="demo-alert" class="shortcut-grid" href="#">
+						<i class="fa fa-bullhorn"></i>
+					</a>
+				</li>
+				<li class="col-xs-4" data-content="Page Alerts">
+					<a id="demo-page-alert" class="shortcut-grid" href="#">
+						<i class="fa fa-bell"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--================================-->
+		<!--End shortcut buttons-->
+
+
+		<!--Menu-->
+		<!--================================-->
+		<div id="mainnav-menu-wrap">
+			<div class="nano">
+				<div class="nano-content">
+					<ul id="mainnav-menu" class="list-group">
+						<volist name="list" id="v">
+							<if condition="$v['child']">
+								<li class="<if condition="in_array($v[id],$filtrate)">active-sub active</if>">
+									<a href="{:U($v['name'])}">
+										<i class="fa <if condition="$v['icon']">{$v['icon']}<else />fa-caret-right</if>"></i>
+										<span class="menu-title">{$v['title']}</span>
+										<i class="arrow"></i>
+									</a>
+									<ul class="collapse <if condition="in_array($v[id],$filtrate)">in</if>">
+										<volist name="v['child']" id="v1">
+											<if condition="$v1['child']">
+												<li class="<if condition="in_array($v1[id],$filtrate)">active-sub active</if>">
+													<a href="{:U($v1['name'])}">
+														<i class="fa <if condition="$v1['icon']">{$v1['icon']}<else />fa-caret-right</if>"></i>
+														<span class="menu-title">{$v1['title']}</span>
+														<i class="arrow"></i>
+													</a>	
+													<ul class="collapse <if condition="in_array($v1[id],$filtrate)">in</if>">
+														<volist name="v1['child']" id="v2">
+															<if condition="$v2['child']">
+																<li class="<if condition="in_array($v2[id],$filtrate)">active-sub active</if>">
+																	<a href="{:U($v2['name'])}">
+																		<i class="fa <if condition="$v2['icon']">{$v2['icon']}<else />fa-caret-right</if>"></i>
+																		<span class="menu-title">{$v2['title']}</span>
+																		<i class="arrow"></i>
+																	</a>	
+																	<ul class="collapse <if condition="in_array($v1[id],$filtrate)">in</if>">
+																		<foreach name="v2['child']" item="v3">
+																			<if condition="$v3['child']">
+																				<li class="<if condition="in_array($v3[id],$filtrate)">active-sub active</if>">
+																					<a href="{:U($v3['name'])}">
+																						<i class="fa <if condition="$v3['icon']">{$v3['icon']}<else />fa-caret-right</if>"></i>
+																						<span class="menu-title">{$v3['title']}</span>
+																						<i class="arrow"></i>
+																					</a>	
+																					<ul class="collapse <if condition="in_array($v1[id],$filtrate)">in</if>">
+																						
+																					</ul>
+																				</li>	
+																			<else />
+																				<li class="<if condition="in_array($v3[id],$filtrate)">active-link</if>">
+																					<a href="{:U($v3['name'])}">
+																						<i class="fa <if condition="$v3['icon']">{$v3['icon']}<else />fa-caret-right</if>"></i>
+																						<span class="menu-title">{$v3['title']}</span>
+																					</a>
+																				</li>
+																			</if>
+																		</foreach>
+																	</ul>
+																</li>	
+															<else />
+																<li class="<if condition="in_array($v2[id],$filtrate)">active-link</if>">
+																	<a href="{:U($v2['name'])}">
+																		<i class="fa <if condition="$v2['icon']">{$v2['icon']}<else />fa-caret-right</if>"></i>
+																		<span class="menu-title">{$v2['title']}</span>
+																	</a>
+																</li>
+															</if>
+														</volist>	
+													</ul>
+												</li>	
+											<else />
+												<li class="<if condition="in_array($v1[id],$filtrate)">active-link</if>">
+													<a href="{:U($v1['name'])}">
+														<i class="fa <if condition="$v1['icon']">{$v1['icon']}<else />fa-caret-right</if>"></i>
+														<span class="menu-title">{$v1['title']}</span>
+													</a>
+												</li>
+											</if>
+										</volist>	
+									</ul>
+								</li>
+							<else />	
+								<li class="<if condition="in_array($v[id],$filtrate)">active-link</if>">
+									<a href="{:U($v['name'])}">
+										<i class="fa <if condition="$v['icon']">{$v['icon']}<else />fa-caret-right</if>"></i>
+										<span class="menu-title">{$v['title']}</span>
+									</a>
+								</li>		
+							</if>
+						</volist>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--================================-->
+		<!--End menu-->
+
+	</div>
+</nav>
+<!--===================================================-->
+<!--END MAIN NAVIGATION-->
