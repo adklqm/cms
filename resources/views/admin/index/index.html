@@ -1,38 +1,26 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>uc.cms.com</title>
-    <!--Bootstrap Stylesheet [ REQUIRED ]-->
-    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+{extend name='public/base' /}
+{block name='title'}首页{/block}
 
-    <link rel="stylesheet" href="__STATIC__/admin/css/common.css">
+{block name="body"}
+<a href="javascript:df();">df</a>
+{/block}
 
-    <link rel="stylesheet" href="__STATIC__/plugin/panelSlider/css/panelSlider.css">
-    <!--jQuery [ REQUIRED ]-->
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+{block name="javascript"}
+<script>
+    function df(){
+        panelSlider({
+            title:'122',
+            url:'{:url("/test")}',
+        }).open();
 
-    <script src="https://cdn.bootcss.com/popper.js/1.9.3/umd/popper.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-
-    <script src="__STATIC__/plugin/panelSlider/js/panelSlider.js"></script>
-
-</head>
-<body style="overflow: hidden;">
-    <div class="left">
-    sf</br>
-    sf</br>
-    sf</br>
-        <div class="left-container">
-            <div class="site-title"></div>
-            <div class="site-search"></div>
-            <div class="site-nav">
-            </div>
-        </div>
-    </div>
-    <div class="right">
-    </div>
-</body>
-</html>
+        panelSlider({
+            title:'122',
+            width:20,
+            level:2,
+            tips:'sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>sdf</br>',
+            url:'{:url("/test")}',
+        }).confirm();
+    }
+    
+</script>
+{/block}

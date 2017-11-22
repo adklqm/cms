@@ -8,6 +8,6 @@ class Index extends Common{
     }
 
     public function test(){
-      echo 3;
+        echo 3;
     }
 }
